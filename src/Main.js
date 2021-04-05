@@ -6,8 +6,9 @@ export default class Main extends Component {
 	render() {
 		return (
 			<div className="main">
-				<div>
-					<h2>Links for React</h2>
+				<h2>Links for React</h2>
+				<input type="text" placeholder="Search" />
+				<div className="linksContainer">
 					{this.props.linkList.map((link) => (
 						<LinkBox
 							key={link.id}

@@ -6,9 +6,9 @@ export default class LeftNav extends Component {
 		return (
 			<div className="leftNav">
 				<div>
-					<h2>Salty Cactus</h2>
-					<h3>{this.props.fav} fav. links</h3>
-					<h3>{this.props.shared} shared links</h3>
+					<h3>Salty Cactus</h3>
+					<h4>{this.props.fav} fav. links</h4>
+					<h4>{this.props.shared} shared links</h4>
 					<button className="btn btn-primary">Add Link</button>
 				</div>
 			</div>
