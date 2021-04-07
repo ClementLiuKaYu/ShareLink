@@ -20,6 +20,11 @@ export default class App extends Component {
 				tags: ['Biased', 'News', 'Stop showing me Korean news'],
 			},
 		],
+		addLinkInput: {
+			name: '',
+			tags: [''],
+			url: '',
+		},
 	};
 
 	render() {
@@ -28,9 +33,22 @@ export default class App extends Component {
 				<LeftNav
 					fav={this.state.linkList.length}
 					shared={this.state.linkList.length - 1}
+					addLinkFunc={{
+						addLink: this.addLink,
+						addTagBox: this.addTagBox,
+						inputChange: this.inputChange,
+					}}
 				/>
 				<Main linkList={this.state.linkList} />
 			</div>
 		);
 	}
+
+	addLink() {}
+
+	addTagBox() {}
+
+	inputChange() {}
+
+	search() {}
 }
