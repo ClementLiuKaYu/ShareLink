@@ -5,10 +5,16 @@ import LeftNav from './LeftNav';
 import Main from './Main';
 
 export default class App extends Component {
-	state = {
-		linkList: JSON.parse(localStorage.getItem('linkList')),
-		shownList: JSON.parse(localStorage.getItem('linkList')),
-	};
+	constructor() {
+		super();
+		const storage = JSON.parse(localStorage.getItem('linkList'));
+		console.log(storage);
+		const storedList = storage == null || '' ? [] : storage;
+		this.state = {
+			linkList: [...storedList],
+			shownList: [...storedList],
+		};
+	}
 
 	addLink = (linkProps) => {
 		let newList = [...this.state.linkList];
@@ -16,6 +22,7 @@ export default class App extends Component {
 		localStorage.setItem('linkList', JSON.stringify(newList));
 		this.setState({
 			linkList: newList,
+			shownList: newList,
 		});
 	};
 
